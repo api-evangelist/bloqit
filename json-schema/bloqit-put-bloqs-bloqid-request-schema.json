@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloqit/main/json-schema/bloqit-put-bloqs-bloqid-request-schema.json",
+  "title": "PutBloqsBloqidRequest",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloqit-openapi-generated.yml#/components/schemas/PutBloqsBloqidRequest",
+  "type": "object",
+  "properties": {
+    "active": {
+      "type": "boolean",
+      "description": "Bloq Status in the system"
+    },
+    "address": {
+      "type": "string",
+      "description": "Physical address of the Bloq"
+    },
+    "city": {
+      "type": "string",
+      "description": "The city where the Bloq is located"
+    },
+    "code": {
+      "type": "string",
+      "description": "The code that identifies a Bloq"
+    },
+    "country": {
+      "type": "string",
+      "description": "The alpha-2 code of the country where the Bloq is located"
+    },
+    "location": {
+      "type": "object",
+      "description": "The location of the Bloq in the map"
+    },
+    "maxRentCollectTimeHour": {
+      "type": "integer",
+      "description": "The maximum rent collect time in hours"
+    },
+    "maxRentDeliveryTimeHour": {
+      "type": "integer",
+      "description": "The maximum rent delivery time in hours"
+    },
+    "maxRentTimeHour": {
+      "type": "integer",
+      "description": "The maximum rent time in hours"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "The metadata of the Bloq, can be used to store any additional information."
+    },
+    "postalCode": {
+      "type": "string",
+      "description": "Postal code of the Bloq"
+    },
+    "title": {
+      "type": "string",
+      "description": "This is how the Bloq can be identified"
+    }
+  }
+}

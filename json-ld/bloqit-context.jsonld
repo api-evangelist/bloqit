@@ -1,0 +1,116 @@
+{
+  "@context": {
+    "@vocab": "https://bloq.it/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bloqit": "https://bloq.it/schema#",
+    "GetApiV1PublicBloqsResponse": "bloqit:GetApiV1PublicBloqsResponse",
+    "docs": {
+      "@id": "bloqit:docs",
+      "@container": "@list"
+    },
+    "limit": {
+      "@id": "bloqit:limit",
+      "@type": "xsd:integer"
+    },
+    "page": {
+      "@id": "bloqit:page",
+      "@type": "xsd:integer"
+    },
+    "totalDocs": {
+      "@id": "bloqit:totalDocs",
+      "@type": "xsd:integer"
+    },
+    "GetBloqsResponse": "bloqit:GetBloqsResponse",
+    "GetBloqsExternalExternalidResponse": "bloqit:GetBloqsExternalExternalidResponse",
+    "GetBloqsTokensTokenResponse": "bloqit:GetBloqsTokensTokenResponse",
+    "GetBloqsBloqidResponse": "bloqit:GetBloqsBloqidResponse",
+    "PutBloqsBloqidRequest": "bloqit:PutBloqsBloqidRequest",
+    "active": {
+      "@id": "bloqit:active",
+      "@type": "xsd:boolean"
+    },
+    "address": {
+      "@id": "bloqit:address",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "bloqit:city",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "bloqit:code",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "bloqit:country",
+      "@type": "xsd:string"
+    },
+    "location": {
+      "@id": "bloqit:location"
+    },
+    "maxRentCollectTimeHour": {
+      "@id": "bloqit:maxRentCollectTimeHour",
+      "@type": "xsd:integer"
+    },
+    "maxRentDeliveryTimeHour": {
+      "@id": "bloqit:maxRentDeliveryTimeHour",
+      "@type": "xsd:integer"
+    },
+    "maxRentTimeHour": {
+      "@id": "bloqit:maxRentTimeHour",
+      "@type": "xsd:integer"
+    },
+    "metadata": {
+      "@id": "bloqit:metadata"
+    },
+    "postalCode": {
+      "@id": "bloqit:postalCode",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "bloqit:title",
+      "@type": "xsd:string"
+    },
+    "PutBloqsBloqidResponse": "bloqit:PutBloqsBloqidResponse",
+    "PutBloqsBloqidCouriersAccessCodesRequest": "bloqit:PutBloqsBloqidCouriersAccessCodesRequest",
+    "carrier": {
+      "@id": "bloqit:carrier",
+      "@type": "xsd:string"
+    },
+    "hashAlgorithm": {
+      "@id": "bloqit:hashAlgorithm",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "bloqit:password",
+      "@type": "xsd:string"
+    },
+    "permissions": {
+      "@id": "bloqit:permissions",
+      "@container": "@list"
+    },
+    "username": {
+      "@id": "bloqit:username",
+      "@type": "xsd:string"
+    },
+    "PutBloqsBloqidCouriersAccessCodesResponse": "bloqit:PutBloqsBloqidCouriersAccessCodesResponse",
+    "PutBloqsBloqidLockersOpenRequest": "bloqit:PutBloqsBloqidLockersOpenRequest",
+    "lockers": {
+      "@id": "bloqit:lockers",
+      "@container": "@list"
+    },
+    "PutBloqsBloqidLockersOpenResponse": "bloqit:PutBloqsBloqidLockersOpenResponse",
+    "PutBloqsBloqidLockersLockeridIdRequest": "bloqit:PutBloqsBloqidLockersLockeridIdRequest",
+    "PutBloqsBloqidLockersLockeridIdResponse": "bloqit:PutBloqsBloqidLockersLockeridIdResponse",
+    "GetBloqsBloqidIdResponse": "bloqit:GetBloqsBloqidIdResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Bloqit API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Bloqit's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-29) from openapi/_ae-authored/bloqit-openapi-generated.yml.",
+  "dcterms:created": "2026-09-29",
+  "dcterms:source": [
+    "openapi/_ae-authored/bloqit-openapi-generated.yml"
+  ]
+}

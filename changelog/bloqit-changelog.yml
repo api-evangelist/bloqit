@@ -1,0 +1,52 @@
+generated: '2026-09-29'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.api.bloq.it/changelog.html
+sources:
+- https://docs.api.bloq.it/changelog.html
+entries:
+- breaking: false
+  highlights:
+  - Added bloq_full reason to the cancel dropoff endpoint
+- breaking: false
+  highlights:
+  - Updated open a locker endpoint to allow expired rents
+- breaking: false
+  highlights:
+  - Added endpoint to release a reserved or pre-advised rent
+- breaking: false
+  highlights:
+  - Add metadata, firmwareVersion, frontendVersion, customFrontendVersion to Bloq example
+  - Fix listBloqs example that returned Locker Ids instead of object
+  - Fix OpenLockersBulk and OpenLockersBulkAccepted examples to return Bloq titles instead of Ids
+  - Fix /bloqs/{bloqID}/print-label 200 response
+- breaking: false
+  highlights:
+  - Added rent.drop_off_misalignment event to the webhooks.
+- breaking: false
+  highlights:
+  - Added layout field to locker object
+- breaking: false
+  highlights:
+  - Added new endpoint to create authenticated bloq session
+  - Added new endpoint to finish an active bloq session
+  - Added session-id header to protected endpoints
+  - Added Session schema to components
+- breaking: false
+  highlights:
+  - Added bundleId to the Rent object
+- breaking: false
+  highlights:
+  - Added bundleId to the Reserve Delivery endpoint
+- breaking: false
+  highlights:
+  - Added bloq type to bloq listing endpoints
+- breaking: false
+  highlights:
+  - Added new endpoint to cancel a rent by external ID
+- breaking: false
+  highlights:
+  - Changed AccessCodePermissions enum on Courier Access Code endpoint
+current_version: 1.64.0
+note: Versioning scheme uses semantic-like three-part numeric versions (e.g., 1.64.0). Dates are not provided in the changelog.
+docs: https://docs.api.bloq.it/changelog.html

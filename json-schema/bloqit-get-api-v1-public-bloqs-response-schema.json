@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloqit/main/json-schema/bloqit-get-api-v1-public-bloqs-response-schema.json",
+  "title": "GetApiV1PublicBloqsResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloqit-openapi-generated.yml#/components/schemas/GetApiV1PublicBloqsResponse",
+  "type": "object",
+  "properties": {
+    "docs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "code": {
+            "type": "string"
+          },
+          "details": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "freeLockers": {
+            "type": "integer"
+          },
+          "inactiveLockers": {
+            "type": "integer"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "coordinates": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "lockers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "_id": {
+                  "type": "string"
+                },
+                "accessMode": {
+                  "type": "string"
+                },
+                "active": {
+                  "type": "boolean"
+                },
+                "bloq": {
+                  "type": "string"
+                },
+                "isOpen": {
+                  "type": "boolean"
+                },
+                "lockerTitle": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "lockersOfType": {
+            "type": "integer"
+          },
+          "supports": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limit": {
+      "type": "integer"
+    },
+    "page": {
+      "type": "integer"
+    },
+    "totalDocs": {
+      "type": "integer"
+    }
+  }
+}

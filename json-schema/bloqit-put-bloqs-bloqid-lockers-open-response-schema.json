@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloqit/main/json-schema/bloqit-put-bloqs-bloqid-lockers-open-response-schema.json",
+  "title": "PutBloqsBloqidLockersOpenResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloqit-openapi-generated.yml#/components/schemas/PutBloqsBloqidLockersOpenResponse",
+  "type": "object",
+  "properties": {
+    "200": {
+      "type": "string",
+      "description": "Returns the titles of the Lockers that were opened"
+    },
+    "202": {
+      "type": "string",
+      "description": "Accepts request and returns the titles of the Lockers"
+    },
+    "400": {
+      "type": "string",
+      "description": "Bad Request"
+    },
+    "401": {
+      "type": "string",
+      "description": "Unauthorized"
+    },
+    "403": {
+      "type": "string",
+      "description": "Forbidden"
+    },
+    "404": {
+      "type": "string",
+      "description": "Not Found"
+    },
+    "429": {
+      "type": "string",
+      "description": "Too Many Requests"
+    },
+    "500": {
+      "type": "string",
+      "description": "Internal Server Error"
+    },
+    "502": {
+      "type": "string",
+      "description": "Bad Gateway Error"
+    },
+    "504": {
+      "type": "string",
+      "description": "Bad Gateway Error"
+    }
+  }
+}

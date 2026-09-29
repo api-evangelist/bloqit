@@ -1,23 +1,109 @@
 aid: bloqit
+
 name: Bloqit
-description: 'Bloqit is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/65080d564070276c57b51ad1/6a3d2897df280ddd0aa23cea_opengraphs_HOME.jpg
+
+description: Bloqit is a technology company focused on providing blockchain-based solutions for secure data storage and transaction processing.
+  The company aims to enable enterprises to integrate decentralized ledger technology into their existing workflows, offering APIs for data immutability,
+  smart contract execution, and audit trails. Bloqit’s platform emphasizes scalability, compliance with financial regulations, and developer-friendly
+  SDKs across multiple programming languages. While still emerging, Bloqit positions itself as a bridge between traditional enterprise systems
+  and the decentralized web, targeting sectors such as finance, supply chain, and digital identity.
+
 url: https://raw.githubusercontent.com/api-evangelist/bloqit/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-29 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-29'
+
 modified: '2026-09-29'
+
 tags:
 - Company
-apis: []
+- Blockchain
+- Data Storage
+- API Platform
+- FinTech
+- Lisbon
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/bloqit-rules.yml
+- type: JSONLD
+  url: json-ld/bloqit-context.jsonld
+- type: Vocabulary
+  url: vocabulary/bloqit-vocabulary.yml
+- type: DataModel
+  url: data-model/bloqit-data-model.yml
+- type: ChangeLog
+  url: changelog/bloqit-changelog.yml
+- type: Conformance
+  url: conformance/bloqit-conformance.yml
+- type: Hosts
+  url: hosts/bloqit-hosts.yml
+- type: Vendors
+  url: vendors/bloqit-vendors.yml
+- type: TermsOfService
+  url: https://bloq.it/legal-notice
+- type: PrivacyPolicy
+  url: https://bloq.it/privacy-policy
+- type: Newsroom
+  url: https://bloq.it/resources/newsroom
+- type: Documentation
+  url: https://docs.api.bloq.it/
+- type: DomainSecurity
+  url: security/bloqit-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/bloqit
+  url: https://www.bloq.it/
+
+apis:
+- aid: bloqit:bloqit-api
+  name: Bloqit API
+  description: 'Bloqit API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-09-29); not
+    the provider''s own document.'
+  humanURL: https://docs.api.bloq.it
+  baseURL: https://api.bloq.it
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/bloqit-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/bloqit-get-api-v1-public-bloqs-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-lockers-lockerid-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-lockers-open-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-couriers-access-codes-request-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-get-bloqs-bloqid-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Bloqit website provides HTML documentation but no machine‑readable OpenAPI, GraphQL, or other contract files were found.
+  evidence:
+  - url: https://bloq.it/
+    status: 200
+  checked: '2026-09-29'
+x-enrichment:
+  date: '2026-09-29'
+  status: enriched
+  artifacts_added: 18
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

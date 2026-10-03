@@ -1,0 +1,118 @@
+openapi: 3.2.0
+info:
+  title: Bloqit Public API
+  version: '2026-09-29'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-29: 10 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bloqit has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 1
+    documentation: 9
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-29'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.api.bloq.it
+servers:
+- url: https://api.bloq.it
+tags:
+- name: Public
+paths:
+  /api/v1/public/bloqs:
+    get:
+      operationId: get_api_v1_public_bloqs
+      tags:
+      - Public
+      summary: GET /api/v1/public/bloqs
+      x-source: https://docs.api.bloq.it
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV1PublicBloqsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl Shell + Httpie Python + Python3 Php + Curl Php + Http1 Php + Http2 Copy const request = require ( 'request' ) ; \nconst options = { \n method : 'GET' , \n url : 'https://api.bloq.it/api/v1/public/bloqs' , \n qs : { \n page : 'SOME_INTEGER_VALUE' , \n limit : 'SOME_INTEGER_VALUE' , \n active : 'SOME_STRING_VALUE' , \n lockerType : 'SOME_STRING_VALUE' , \n rentType : 'SOME_STRING_VALUE' \n } , \n headers "
+components:
+  schemas:
+    GetApiV1PublicBloqsResponse:
+      type: object
+      properties:
+        docs:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+              active:
+                type: boolean
+              code:
+                type: string
+              details:
+                type: object
+                properties:
+                  address:
+                    type: string
+                  city:
+                    type: string
+                  country:
+                    type: string
+                  postalCode:
+                    type: string
+                  title:
+                    type: string
+              externalId:
+                type: string
+              freeLockers:
+                type: integer
+              inactiveLockers:
+                type: integer
+              location:
+                type: object
+                properties:
+                  coordinates:
+                    type: array
+                    items:
+                      type: number
+                  type:
+                    type: string
+              lockers:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    accessMode:
+                      type: string
+                    active:
+                      type: boolean
+                    bloq:
+                      type: string
+                    isOpen:
+                      type: boolean
+                    lockerTitle:
+                      type: string
+                    type:
+                      type: string
+              lockersOfType:
+                type: integer
+              supports:
+                type: array
+                items:
+                  type: string
+              type:
+                type: string
+        limit:
+          type: integer
+        page:
+          type: integer
+        totalDocs:
+          type: integer

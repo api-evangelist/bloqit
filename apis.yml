@@ -70,16 +70,16 @@ common:
   url: https://www.bloq.it/
 
 apis:
-- aid: bloqit:bloqit-api
-  name: Bloqit API
-  description: 'Bloqit API as documented publicly: 10 operations. Contract generated from the documentation by API Evangelist (2026-09-29); not
-    the provider''s own document.'
+- aid: bloqit:bloqit-bloqs-api
+  name: Bloqit Bloqs API
+  description: The Bloqs API from Bloqit — 9 operation(s) for bloqs.
   humanURL: https://docs.api.bloq.it
   baseURL: https://api.bloq.it
+  tags:
+  - Bloqs
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/bloqit-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/bloqit-bloqs-api-openapi.yml
   - type: JSONSchema
     url: json-schema/bloqit-get-api-v1-public-bloqs-response-schema.json
   - type: JSONSchema
@@ -92,7 +92,28 @@ apis:
     url: json-schema/bloqit-put-bloqs-bloqid-couriers-access-codes-request-schema.json
   - type: JSONSchema
     url: json-schema/bloqit-get-bloqs-bloqid-response-schema.json
-
+- aid: bloqit:bloqit-public-api
+  name: Bloqit Public API
+  description: The Public API from Bloqit — 1 operation(s) for public.
+  humanURL: https://docs.api.bloq.it
+  baseURL: https://api.bloq.it
+  tags:
+  - Public
+  properties:
+  - type: OpenAPI
+    url: openapi/bloqit-public-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloqit-get-api-v1-public-bloqs-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-lockers-lockerid-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-lockers-open-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-put-bloqs-bloqid-couriers-access-codes-request-schema.json
+  - type: JSONSchema
+    url: json-schema/bloqit-get-bloqs-bloqid-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

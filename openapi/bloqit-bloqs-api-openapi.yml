@@ -1,0 +1,611 @@
+openapi: 3.2.0
+info:
+  title: Bloqit Bloqs API
+  version: '2026-09-29'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-29: 10 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bloqit has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 1
+    documentation: 9
+    pages-with-code: 1
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-29'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.api.bloq.it
+servers:
+- url: https://api.bloq.it
+tags:
+- name: Bloqs
+paths:
+  /bloqs:
+    get:
+      operationId: get_bloqs
+      tags:
+      - Bloqs
+      summary: List all Bloqs
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: A cursor to use in pagination.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: A limit in the number of objects returned.
+      - name: active
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Filter to search for all Bloqs, only active ones or only inactive.
+      - name: lockerType
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When this parameter exists only bloqs that have this type of lockers will be shown.
+      - name: rentType
+        in: query
+        required: false
+        schema:
+          type: string
+        description: When this parameter exists only bloqs that allow this type of rent will be shown.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBloqsResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/external/{externalid}:
+    get:
+      operationId: get_bloqs_external_externalid
+      tags:
+      - Bloqs
+      summary: Retrieve a Bloq by external ID
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: externalid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: session-id
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Optional session identifier for authenticated bloq access
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBloqsExternalExternalidResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/tokens/{token}:
+    get:
+      operationId: get_bloqs_tokens_token
+      tags:
+      - Bloqs
+      summary: BLE token validation
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: token_signature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Deprecated. The signature of the BLE token.
+      - name: tokenSignature
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The signature of the BLE token
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBloqsTokensTokenResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/{bloqid}:
+    get:
+      operationId: get_bloqs_bloqid
+      tags:
+      - Bloqs
+      summary: Retrieve a Bloq
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBloqsBloqidResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/{bloqid}/:
+    put:
+      operationId: put_bloqs_bloqid
+      tags:
+      - Bloqs
+      summary: Update Bloq
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBloqsBloqidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutBloqsBloqidResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/{bloqid}/couriers-access-codes:
+    put:
+      operationId: put_bloqs_bloqid_couriers_access_codes
+      tags:
+      - Bloqs
+      summary: Create or Update Courier access codes
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBloqsBloqidCouriersAccessCodesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutBloqsBloqidCouriersAccessCodesResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/{bloqid}/lockers/open:
+    put:
+      operationId: put_bloqs_bloqid_lockers_open
+      tags:
+      - Bloqs
+      summary: Open several Lockers
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBloqsBloqidLockersOpenRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutBloqsBloqidLockersOpenResponse'
+      x-evidence:
+        kind: documentation
+  /bloqs/{bloqid}/lockers/{lockerid}/{id}:
+    put:
+      operationId: put_bloqs_bloqid_lockers_lockerid_id
+      tags:
+      - Bloqs
+      summary: Change a locker availability (enable or disable)
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lockerid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBloqsBloqidLockersLockeridIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutBloqsBloqidLockersLockeridIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 4 example path(s) differing only at id
+  /bloqs/{bloqid}/{id}:
+    get:
+      operationId: get_bloqs_bloqid_id
+      tags:
+      - Bloqs
+      summary: List Couriers access codes
+      x-source: https://docs.api.bloq.it
+      parameters:
+      - name: bloqid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBloqsBloqidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at id
+components:
+  schemas:
+    PutBloqsBloqidCouriersAccessCodesRequest:
+      type: object
+      properties:
+        carrier:
+          type: string
+          description: Field containing a carrier ID which can use the bloq, and authenticate its couriers, within the context of an open network
+        code:
+          type: string
+          description: Field containing the courier access code
+        hashAlgorithm:
+          type: string
+          description: Hash algorithm used to hash the password
+        password:
+          type: string
+          description: Field containing the password of the courier
+        permissions:
+          type: array
+          description: Permissions for the access code
+        username:
+          type: string
+          description: Field containing the username of the courier
+      required:
+      - carrier
+      - code
+    GetBloqsBloqidIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns a list of Couriers access codes
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    GetBloqsTokensTokenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request was successful
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    PutBloqsBloqidCouriersAccessCodesResponse:
+      type: object
+      properties:
+        '201':
+          type: string
+          description: Returns a list of Couriers access codes
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    PutBloqsBloqidLockersLockeridIdRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+          description: Flag with the new locker state, true -> enabled, false -> disabled
+      required:
+      - active
+    GetBloqsExternalExternalidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the Bloq object for the given identifier
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    PutBloqsBloqidLockersOpenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the titles of the Lockers that were opened
+        '202':
+          type: string
+          description: Accepts request and returns the titles of the Lockers
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+        '502':
+          type: string
+          description: Bad Gateway Error
+        '504':
+          type: string
+          description: Bad Gateway Error
+    PutBloqsBloqidLockersOpenRequest:
+      type: object
+      properties:
+        lockers:
+          type: array
+          description: Pass the Lockers ids that you wish to open
+      required:
+      - lockers
+    PutBloqsBloqidRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+          description: Bloq Status in the system
+        address:
+          type: string
+          description: Physical address of the Bloq
+        city:
+          type: string
+          description: The city where the Bloq is located
+        code:
+          type: string
+          description: The code that identifies a Bloq
+        country:
+          type: string
+          description: The alpha-2 code of the country where the Bloq is located
+        location:
+          type: object
+          description: The location of the Bloq in the map
+        maxRentCollectTimeHour:
+          type: integer
+          description: The maximum rent collect time in hours
+        maxRentDeliveryTimeHour:
+          type: integer
+          description: The maximum rent delivery time in hours
+        maxRentTimeHour:
+          type: integer
+          description: The maximum rent time in hours
+        metadata:
+          type: object
+          description: The metadata of the Bloq, can be used to store any additional information.
+        postalCode:
+          type: string
+          description: Postal code of the Bloq
+        title:
+          type: string
+          description: This is how the Bloq can be identified
+    PutBloqsBloqidLockersLockeridIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the Locker object modified
+        '202':
+          type: string
+          description: Returns the Locker object modified
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '409':
+          type: string
+          description: Conflict
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+        '502':
+          type: string
+          description: Bad Gateway Error
+        '504':
+          type: string
+          description: Bad Gateway Error
+    GetBloqsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns a list of Bloq objects
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    PutBloqsBloqidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the Bloq object for the given identifier
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    GetBloqsBloqidResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the Bloq object for the given identifier
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error

@@ -15,7 +15,10 @@
     "bloqit-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "bloqit-openapi-generated.yml: tagged paths GET /api/v1/public/bloqs -> Public",
     "bloqit-openapi-generated.yml: declared missing tag: Public",
-    "apis.yml register: written (+2 apis, 2 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "bloqit-bloqs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloqit-public-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

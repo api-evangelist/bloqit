@@ -305,30 +305,6 @@ paths:
         collapsed_from: 2 example path(s) differing only at id
 components:
   schemas:
-    PutBloqsBloqidCouriersAccessCodesRequest:
-      type: object
-      properties:
-        carrier:
-          type: string
-          description: Field containing a carrier ID which can use the bloq, and authenticate its couriers, within the context of an open network
-        code:
-          type: string
-          description: Field containing the courier access code
-        hashAlgorithm:
-          type: string
-          description: Hash algorithm used to hash the password
-        password:
-          type: string
-          description: Field containing the password of the courier
-        permissions:
-          type: array
-          description: Permissions for the access code
-        username:
-          type: string
-          description: Field containing the username of the courier
-      required:
-      - carrier
-      - code
     GetBloqsBloqidIdResponse:
       type: object
       properties:
@@ -353,30 +329,12 @@ components:
         '500':
           type: string
           description: Internal Server Error
-    GetBloqsTokensTokenResponse:
+    GetBloqsExternalExternalidResponse:
       type: object
       properties:
         '200':
           type: string
-          description: The request was successful
-        '400':
-          type: string
-          description: Bad Request
-        '401':
-          type: string
-          description: Unauthorized
-        '429':
-          type: string
-          description: Too Many Requests
-        '500':
-          type: string
-          description: Internal Server Error
-    PutBloqsBloqidCouriersAccessCodesResponse:
-      type: object
-      properties:
-        '201':
-          type: string
-          description: Returns a list of Couriers access codes
+          description: Returns the Bloq object for the given identifier
         '400':
           type: string
           description: Bad Request
@@ -395,15 +353,106 @@ components:
         '500':
           type: string
           description: Internal Server Error
-    PutBloqsBloqidLockersLockeridIdRequest:
+    PutBloqsBloqidLockersLockeridIdResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns the Locker object modified
+        '202':
+          type: string
+          description: Returns the Locker object modified
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '403':
+          type: string
+          description: Forbidden
+        '404':
+          type: string
+          description: Not Found
+        '409':
+          type: string
+          description: Conflict
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+        '502':
+          type: string
+          description: Bad Gateway Error
+        '504':
+          type: string
+          description: Bad Gateway Error
+    PutBloqsBloqidRequest:
       type: object
       properties:
         active:
           type: boolean
-          description: Flag with the new locker state, true -> enabled, false -> disabled
+          description: Bloq Status in the system
+        address:
+          type: string
+          description: Physical address of the Bloq
+        city:
+          type: string
+          description: The city where the Bloq is located
+        code:
+          type: string
+          description: The code that identifies a Bloq
+        country:
+          type: string
+          description: The alpha-2 code of the country where the Bloq is located
+        location:
+          type: object
+          description: The location of the Bloq in the map
+        maxRentCollectTimeHour:
+          type: integer
+          description: The maximum rent collect time in hours
+        maxRentDeliveryTimeHour:
+          type: integer
+          description: The maximum rent delivery time in hours
+        maxRentTimeHour:
+          type: integer
+          description: The maximum rent time in hours
+        metadata:
+          type: object
+          description: The metadata of the Bloq, can be used to store any additional information.
+        postalCode:
+          type: string
+          description: Postal code of the Bloq
+        title:
+          type: string
+          description: This is how the Bloq can be identified
+    PutBloqsBloqidCouriersAccessCodesRequest:
+      type: object
+      properties:
+        carrier:
+          type: string
+          description: Field containing a carrier ID which can use the bloq, and authenticate its couriers, within the context of an open network
+        code:
+          type: string
+          description: Field containing the courier access code
+        hashAlgorithm:
+          type: string
+          description: Hash algorithm used to hash the password
+        password:
+          type: string
+          description: Field containing the password of the courier
+        permissions:
+          type: array
+          description: Permissions for the access code
+        username:
+          type: string
+          description: Field containing the username of the courier
       required:
-      - active
-    GetBloqsExternalExternalidResponse:
+      - carrier
+      - code
+    GetBloqsBloqidResponse:
       type: object
       properties:
         '200':
@@ -460,107 +509,6 @@ components:
         '504':
           type: string
           description: Bad Gateway Error
-    PutBloqsBloqidLockersOpenRequest:
-      type: object
-      properties:
-        lockers:
-          type: array
-          description: Pass the Lockers ids that you wish to open
-      required:
-      - lockers
-    PutBloqsBloqidRequest:
-      type: object
-      properties:
-        active:
-          type: boolean
-          description: Bloq Status in the system
-        address:
-          type: string
-          description: Physical address of the Bloq
-        city:
-          type: string
-          description: The city where the Bloq is located
-        code:
-          type: string
-          description: The code that identifies a Bloq
-        country:
-          type: string
-          description: The alpha-2 code of the country where the Bloq is located
-        location:
-          type: object
-          description: The location of the Bloq in the map
-        maxRentCollectTimeHour:
-          type: integer
-          description: The maximum rent collect time in hours
-        maxRentDeliveryTimeHour:
-          type: integer
-          description: The maximum rent delivery time in hours
-        maxRentTimeHour:
-          type: integer
-          description: The maximum rent time in hours
-        metadata:
-          type: object
-          description: The metadata of the Bloq, can be used to store any additional information.
-        postalCode:
-          type: string
-          description: Postal code of the Bloq
-        title:
-          type: string
-          description: This is how the Bloq can be identified
-    PutBloqsBloqidLockersLockeridIdResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Returns the Locker object modified
-        '202':
-          type: string
-          description: Returns the Locker object modified
-        '400':
-          type: string
-          description: Bad Request
-        '401':
-          type: string
-          description: Unauthorized
-        '403':
-          type: string
-          description: Forbidden
-        '404':
-          type: string
-          description: Not Found
-        '409':
-          type: string
-          description: Conflict
-        '429':
-          type: string
-          description: Too Many Requests
-        '500':
-          type: string
-          description: Internal Server Error
-        '502':
-          type: string
-          description: Bad Gateway Error
-        '504':
-          type: string
-          description: Bad Gateway Error
-    GetBloqsResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Returns a list of Bloq objects
-        '400':
-          type: string
-          description: Bad Request
-        '401':
-          type: string
-          description: Unauthorized
-        '429':
-          type: string
-          description: Too Many Requests
-        '500':
-          type: string
-          description: Internal Server Error
     PutBloqsBloqidResponse:
       type: object
       properties:
@@ -585,12 +533,28 @@ components:
         '500':
           type: string
           description: Internal Server Error
-    GetBloqsBloqidResponse:
+    PutBloqsBloqidLockersOpenRequest:
       type: object
       properties:
-        '200':
+        lockers:
+          type: array
+          description: Pass the Lockers ids that you wish to open
+      required:
+      - lockers
+    PutBloqsBloqidLockersLockeridIdRequest:
+      type: object
+      properties:
+        active:
+          type: boolean
+          description: Flag with the new locker state, true -> enabled, false -> disabled
+      required:
+      - active
+    PutBloqsBloqidCouriersAccessCodesResponse:
+      type: object
+      properties:
+        '201':
           type: string
-          description: Returns the Bloq object for the given identifier
+          description: Returns a list of Couriers access codes
         '400':
           type: string
           description: Bad Request
@@ -603,6 +567,42 @@ components:
         '404':
           type: string
           description: Not Found
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    GetBloqsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Returns a list of Bloq objects
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
+        '429':
+          type: string
+          description: Too Many Requests
+        '500':
+          type: string
+          description: Internal Server Error
+    GetBloqsTokensTokenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: The request was successful
+        '400':
+          type: string
+          description: Bad Request
+        '401':
+          type: string
+          description: Unauthorized
         '429':
           type: string
           description: Too Many Requests
